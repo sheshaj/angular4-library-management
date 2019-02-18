@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">Welcome Admin</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li [ngClass]="{'active':currentPanel === 'inventory-manage'}"><a (click)="setCurrentPanel('inventory-manage')">Book Management</a></li>
+            <li [ngClass]="{'active':currentPanel === 'config-panel'}"><a (click)="setCurrentPanel('config-panel')">Configuration Settings</a></li>
+            <li [ngClass]="{'active':currentPanel === 'track-books'}"><a (click)="setCurrentPanel('track-books')">Status</a></li>
+            <li class="text-right"><a (click)="logOut();">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<div [ngSwitch]="currentPanel">
+    <app-admin-inventory-management-panel *ngSwitchCase="'inventory-manage'" [bookData]="booksData"></app-admin-inventory-management-panel>
+    <app-admin-config-panel *ngSwitchCase="'config-panel'"></app-admin-config-panel>
+    <app-admin-track-books-panel *ngSwitchCase="'track-books'" [bookData]="booksData"></app-admin-track-books-panel>
+    <app-admin-config-panel *ngSwitchDefault></app-admin-config-panel>
+
+</div>

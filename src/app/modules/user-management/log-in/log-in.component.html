@@ -1,0 +1,49 @@
+<div class="alert alert-danger" *ngIf="errorMsz">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> {{ errorMsz }}
+</div>
+<div class="container">
+    <div class="row logInFrom">
+        <h3>Online Library Management System</h3>
+        <div class="container">
+            <form>
+                <div class="col-sm-4">
+                    <label> Username: </label>
+                    <input type="text" name="username" [(ngModel)]="username" class="">
+                </div>
+                <div class="col-sm-4">
+                    <label> Password: </label>
+                    <input type="password" name="password" [(ngModel)]="password" class="logInControl">
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btn-success" (click)="logIn()">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="../../../assets/images/cor2.png" style="width:100%;height:400px">
+            </div>
+
+            <div class="item">
+                <img src="../../../assets/images/cor3.jpg" alt="New York" style="width:100%;height:400px">
+            </div>
+
+            <div class="item">
+                <img src="../../../assets/images/cor1.jpg" alt="Los Angeles" style="width:100%;height:400px">
+            </div>
+
+
+        </div>
+    </div>
+</div>

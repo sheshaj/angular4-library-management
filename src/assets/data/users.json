@@ -1,0 +1,18 @@
+[
+	{
+		"username": "admin",
+		"password": "admin",
+		"firstName": "admin",
+		"userId": "102",
+		"issuedBooks": [],
+		"logs": []
+	},
+	{
+		"username": "sheshaj",
+		"password": "sheshaj",
+		"firstName": "sheshaj",
+		"userId": "101",
+		"issuedBooks": [],
+		"logs": []
+	}
+]

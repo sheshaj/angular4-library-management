@@ -1,0 +1,122 @@
+[
+	{
+		"id": 1,
+		"title": "A Game of Thrones",
+		"image": "game_of_thrones",
+		"genre": "Fiction",
+		"author": "George Raymond Richard Martin",
+		"description": "GOT",
+		"isbn": "GOT",
+		"totalPresent": 9,
+		"issued": 0,
+		"issuedTo": []
+	},
+	{
+		"id": 2,
+		"title": "Milk and Honey",
+		"image": "milk_and_honey",
+		"genre": "Fiction",
+		"author": "Rupi Kaur",
+		"description": "MH",
+		"isbn": "MH",
+		"totalPresent": 9,
+		"issued": 0,
+		"issuedTo": []
+	},
+	{
+		"id": 3,
+		"title": "Outlander",
+		"image": "outlander",
+		"genre": "Fiction",
+		"author": "Diana J. Gabaldon",
+		"description": "Out",
+		"isbn": "Out",
+		"totalPresent": 9,
+		"issued": 0,
+		"issuedTo": []
+	},
+	{
+		"id": 4,
+		"title": "The Help",
+		"image": "the_help",
+		"genre": "Fiction",
+		"author": "Kathryn Stockett",
+		"description": "TH",
+		"isbn": "TH",
+		"totalPresent": 9,
+		"issued": 0,
+		"issuedTo": []
+	},
+	{
+		"id": 5,
+		"title": "Barrons Gre",
+		"image": "barrons_gre",
+		"genre": "Technology",
+		"author": "Sharon Green",
+		"description": "BG",
+		"isbn": "BG",
+		"totalPresent": 9,
+		"issued": 0,
+		"issuedTo": []
+	},
+	{
+		"id": 6,
+		"title": "Fluid Mechanics",
+		"image": "fluid_mechanics",
+		"genre": "Technology",
+		"author": "George Raymond Richard Martin",
+		"description": "FM",
+		"isbn": "FM",
+		"totalPresent": 9,
+		"issued": 0,
+		"issuedTo": []
+	},
+	{
+		"id": 7,
+		"title": "Management Skills",
+		"image": "management_skills",
+		"genre": "Management",
+		"author": "Carol W. Ellis",
+		"description": "MS",
+		"isbn": "MS",
+		"totalPresent": 9,
+		"issued": 0,
+		"issuedTo": []
+	},
+	{
+		"id": 8,
+		"title": "Zero to One",
+		"image": "zero_to_one",
+		"genre": "Management",
+		"author": "Peter Andreas Thiel",
+		"description": "ZTO",
+		"isbn": "ZTO",
+		"totalPresent": 9,
+		"issued": 0,
+		"issuedTo": []
+	},
+	{
+		"id": 9,
+		"title": "The Lean Startup",
+		"image": "the_lean_startup",
+		"genre": "Management",
+		"author": "Eric Ries",
+		"description": "TLS",
+		"isbn": "TLS",
+		"totalPresent": 9,
+		"issued": 0,
+		"issuedTo": []
+	},
+	{
+		"id": 10,
+		"title": "Rich Dad Poor Dad",
+		"image": "rich_dad_poor_dad",
+		"genre": "Management",
+		"author": "Robert Toru Kiyosaki",
+		"description": "RDPD",
+		"isbn": "RDPD",
+		"totalPresent": 9,
+		"issued": 0,
+		"issuedTo": []
+	}
+]

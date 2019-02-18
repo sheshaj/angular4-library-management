@@ -1,0 +1,70 @@
+<div class="row overflow-y-scroll">
+  <h3>Status of books in Library</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Sr No.</th>
+        <th>
+          Title
+        </th>
+        <th>
+          Author
+        </th>
+        <th>
+          ISBN
+        </th>
+        <th>
+          Genre
+        </th>
+        <th>
+          Total Books
+        </th>
+        <th>
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books  | filterData: [filterValue,'']; let i=index;" ng-init="textFieldMode[i]=false;">
+        <td>{{i+1}}</td>
+
+        <td *ngIf="!textFieldMode[i]"><b>{{book.title}}</b></td>
+        <td *ngIf="textFieldMode[i]">
+          <input class="form-control" type="text" [(ngModel)]="book.title" />
+        </td>
+
+        <td *ngIf="!textFieldMode[i]">{{book.author}}</td>
+        <td *ngIf="textFieldMode[i]">
+          <input class="form-control" type="text" [(ngModel)]="book.author" />
+        </td>
+
+        <td *ngIf="!textFieldMode[i]">
+          {{book.isbn}}
+        </td>
+        <td *ngIf="textFieldMode[i]">
+          <input class="form-control" type="text" [(ngModel)]="book.isbn" />
+        </td>
+
+        <td *ngIf="!textFieldMode[i]">{{book.genre}}</td>
+        <td *ngIf="textFieldMode[i]">
+          <input class="form-control" type="text" [(ngModel)]="book.genre" />
+        </td>
+
+        <td *ngIf="!textFieldMode[i]">{{book.totalPresent}}</td>
+        <td *ngIf="textFieldMode[i]">
+          <input class="form-control" type="text" [(ngModel)]="book.totalPresent" />
+        </td>
+
+        <td *ngIf="!textFieldMode[i]">
+          <button type="button" class="btn btn-success" (click)="textFieldMode[i]=!textFieldMode[i];">Update</button>
+        </td>
+        <td *ngIf="!textFieldMode[i]">
+          <button type="button" class="btn btn-danger" (click)="deleteBook(book.title,i)">Delete</button>
+        </td>
+        <td *ngIf="textFieldMode[i]">
+          <button type="button" class="btn btn-success" (click)="textFieldMode[i]=!textFieldMode[i];UpdateInfo(book)">Confirm</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

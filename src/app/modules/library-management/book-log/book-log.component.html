@@ -1,0 +1,33 @@
+<div class="alert alert-success alert-dismissable" *ngIf="successMsz">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Success!</strong> Book returned successfully.
+</div>
+
+<h3 *ngIf="issuedBook.length<1">
+  You don't have any book to return</h3>
+<div class="col-sm-4 col-xs-12 book-grid" *ngFor="let book of issuedBook; let i=index;">
+  <div>
+    <h3>{{book.title}}</h3>
+    <div class="col-sm-6">
+      <div>
+        <label>Author: </label> {{book.author}}
+      </div>
+      <div> <label>ISBN: </label>{{book.isbn}}</div>
+      <div> <label>Genre: </label>{{book.genre}}</div>
+      <div> <label>Description: </label>{{book.description}}</div>
+      <div> <label>Issuing Date: </label>{{book.fromDate | date}}</div>
+      <div> <label>Returning Date: </label>{{todaysDate | date}}</div>
+    </div>
+    <div class="col-sm-6">
+      <img src="../../assets/images/{{book.title}}.jpg" class="book-image">
+    </div>
+    <p>Rate Book:&nbsp;<span *ngFor="let rate of [1,2,3,4,5];" [ngClass]="{'glyphicon':true, 'glyphicon-star-empty': (book.rating<rate), 'starOutline': (book.rating<rate), 'glyphicon-star': (book.rating>=rate),'ratingStar': (book.rating>=rate)  }"
+        (click)="ratingToBook(rate,i)"></span></p>
+  </div>
+  <div>
+    <label>Comments (If any): </label> <input type="text" class="form-control">
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-info retBtn" data-dismiss="modal" (click)="returnBook(book,i);">Return</button>
+  </div>
+</div>

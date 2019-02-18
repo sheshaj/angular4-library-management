@@ -1,0 +1,59 @@
+<div class="row overflow-y-scroll">
+  <div class="row">
+
+  </div>
+  <table *ngIf="currentTrack==='by-book'" class="table">
+    <thead>
+      <tr>
+        <th>Sr No.</th>
+        <th>
+          Book Name
+          <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        </th>
+        <th>
+          Author
+          <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        </th>
+        <th>
+          No. of copies issued
+          <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        </th>
+        <th>
+          No. of copies Available
+          <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        </th>
+        <th>
+          Issued To
+          <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        </th>
+        <th>
+          From Date
+          <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of booksIssued; let i=index;">
+        <td>{{i+1}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.issuedTo.length}}</td>
+        <td>{{book.totalPresent}}</td>
+        <td>
+          <span *ngIf="book.issuedTo.length>0">
+            <span *ngFor="let user of book.issuedTo">{{user.user}}
+              <br>
+            </span>
+          </span>
+        </td>
+        <td>
+          <span *ngIf="book.issuedTo.length>0">
+            <span *ngFor="let user of book.issuedTo">{{user.fromDate | date}}
+              <br>
+            </span>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

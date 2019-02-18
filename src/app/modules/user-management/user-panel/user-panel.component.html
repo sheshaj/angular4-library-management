@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">Welcome {{ currentUserDisplay }}</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li [ngClass]="{'active':currentTab['book-detail']}"><a (click)="setCurrentPanel('book-detail','book-logs')">Books In Library</a></li>
+            <li [ngClass]="{'active':currentTab['book-logs']}"><a (click)="setCurrentPanel('book-logs','book-detail')">Return your Book</a></li>
+            <li class="text-right"><a (click)="logOut();">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<div [ngSwitch]="currentPanel">
+    <app-book-detail-user *ngSwitchCase="'book-detail'" [bookData]="userPanelModel.booksData" [issuedBook]="issuedBook" [getBookPlace]="userPanelModel.issueMetadata"></app-book-detail-user>
+    <app-book-log *ngSwitchCase="'book-logs'" [bookData]="userPanelModel.booksData" [issuedBook]="issuedBook" [getBookPlace]="userPanelModel.issueMetadata"
+        [logs]="logs"></app-book-log>
+</div>

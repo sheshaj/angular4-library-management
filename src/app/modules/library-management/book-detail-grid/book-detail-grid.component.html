@@ -1,0 +1,75 @@
+<!--<div class="alert alert-success alert-dismissable" *ngIf="successMsz">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>{{ bookName }}</strong> has been issued to you.
+    <p>Please take the book from
+        <strong>Counter</strong> {{bookLocation.shelf}} under
+        <strong>Rack</strong> {{bookLocation.block}}</p>
+    <p>Issuing Date:&nbsp;
+        <strong>{{todaysDate | date}}</strong>
+    </p>
+</div>-->
+<div class="col-sm-4 col-xs-12 book-grid">
+    <div>
+        <h3>{{bookData.title}}</h3>
+        <div class="col-sm-6">
+            <div>
+                <label>Author: </label> {{bookData.author}}
+            </div>
+            <div> <label>ISBN: </label>{{bookData.isbn}}</div>
+            <div> <label>Genre: </label>{{bookData.genre}}</div>
+            <div> <label>Description: </label>{{bookData.description}}</div>
+        </div>
+        <div class="col-sm-6">
+            <img src="../../assets/images/{{bookData.title}}.jpg" class="book-image">
+        </div>
+        <button type="button" class="btn btn-success" data-toggle="modal" [attr.data-target]="issuedBook.length>=booksPerUser || issuedBookIdArray.indexOf(bookData.id)>-1 ? ' ': targetModalId">{{issuedBookIdArray.indexOf(bookData.id)>-1 ? 'Issued' : 'Issue Book'}}</button>
+    </div>
+
+
+    <!-- issueBook Modal -->
+    <div id="{{modalId}}" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Are You sure want to issue this Book?</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <strong>{{bookData.title}}</strong>
+                    </p>
+                    <p>
+                        by <strong>{{bookData.author}}</strong>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-toggle="modal" [attr.data-target]="targetModalId2" data-dismiss="modal"
+                        (click)="issueBook(bookData)">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="{{modelId2}}" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><strong>{{ bookName }}</strong> has been issued to you.</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Please take the book from
+                        <strong>Counter</strong> {{bookLocation.shelf}} under
+                        <strong>Rack</strong> {{bookLocation.block}}</p>
+                    <p>Issuing Date:&nbsp;
+                        <strong>{{todaysDate | date}}</strong>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="alert alert-success alert-dismissable" *ngIf="successMsz">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Success!</strong> Settings updated successfully
+</div>
+<div class="container">
+  <div class="row logInFrom">
+    <h3>Admin Configuration Settings</h3>
+    <br><br>
+    <form>
+      <div class="col-sm-4">
+        <label>Count of books per user: </label>
+        <input type="text" name="bpu" [(ngModel)]="configData.maxBooksPerUser">
+      </div>
+      <div class="col-sm-4">
+        <label>Days Limit: </label>
+        <input type="text" name="dpi" [(ngModel)]="configData.maxDaysPerIssue">
+      </div>
+      <div class="col-sm-4">
+        <button type="button" class="btn btn-success" (click)="updateConfig(configData);">Update</button>
+      </div>
+    </form>
+  </div>
+</div>
